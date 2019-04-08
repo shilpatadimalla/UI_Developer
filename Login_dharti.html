@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .valid {
+        border-color: green;
+      }
+      .invalid {
+        border-color: red;
+      }
+    </style>
+    <script type="text/javascript">
+      function validate() {
+        var userName = document.getElementById("txtName").value;
+        var password = document.getElementById("txtPassword").value;
+        var error = document.getElementById("lblError").value;
+        // to check if our textboxes are blank
+        if (userName == "") {
+          document.getElementById("txtName").focus();
+          alert("UserName can not be empty..");
+          return false;
+        }
+        if (password == "") {
+          document.getElementById("txtPassword").focus();
+          alert("Password can not be empty..");
+          return false;
+        }
+
+        //to check if email is in format
+        var pattern= new RegExp("[^]+@[^]+[.][a-z]{2,63}$");
+        //alert(pattern.test(userName));
+        if(!pattern.test(userName))
+        {
+            alert("User Name should be in format like example@gmail.com..");
+            return false;
+        }
+
+        //to check if username and password matches
+        if (userName == "user@gmail.com" && password == "123456") {
+          alert("validation succeeded");
+
+          return true;
+        } else {
+          alert("User Name or Password Validation failed");
+          return false;
+        }
+        return false;
+      }
+    </script>
+  </head>
+
+  <body>
+    <form
+      action="./Home.html"
+      autocomplete="off"
+      onsubmit="return validate(this);"
+    >
+      <div class="container">
+        <label name="error" id="lblError" text=""></label>
+        <label for="uname"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          name="uname"
+          id="txtName"
+        />
+
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          id="txtPassword"
+        />
+
+        <button type="submit" id="btnLogin">Login</button>
+        <button type="button" id="btnRegister" onclick="location.href='./Register.html';">
+          Register
+        </button>
+      </div>
+    </form>
+  </body>
+</html>

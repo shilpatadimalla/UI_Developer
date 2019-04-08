@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      function validate() {
+        
+        var Fname = document.getElementById("txtFname").value;
+        var Lname = document.getElementById("txtLname").value;
+        var Email = document.getElementById("txtEmail").value;
+        var Password = document.getElementById("txtPassword").value;
+        var CPassword = document.getElementById("txtCPassword").value;
+
+        // to check if our textboxes are blank
+        if (Fname == "") {
+          document.getElementById("txtFname").focus();
+          alert("First Name can not be empty..");
+          return false;
+        }
+        if (Lname == "") {
+          document.getElementById("txtLname").focus();
+          alert("Last Name can not be empty..");
+          return false;
+        }
+
+        if (Email == "") {
+          document.getElementById("txtEmail").focus();
+          alert("Email can not be empty..");
+          return false;
+        }
+
+         //to check if email is in format
+         var pattern = new RegExp("[^]+@[^]+[.][a-z]{2,63}$");
+        //alert(pattern.test(userName));
+        if (!pattern.test(Email)) {
+          document.getElementById("txtEmail").focus();
+          alert("Email should be in format like example@gmail.com..");
+          return false;
+        }
+
+        if (Password == "") {
+          document.getElementById("txtPassword").focus();
+          alert("Password can not be empty..");
+          return false;
+        }
+
+         //Check if Password does not exceed 32 character with atleast one uppercase one lowercase one number and contain special char like !@#$%^&*
+         var passPattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,32})");
+        if (!passPattern.test(Password)) {
+          // document.getElementById("txtPassword").focus();
+          document.getElementById("txtPassword").style.borderColor = "red";
+          alert("Password must be of atleast 8 characher with one Uppercase one lowercase and one number.");
+          return false;
+        }
+        else{
+          document.getElementById("txtPassword").style.borderColor = "green";
+        }
+
+        if (CPassword == "") {
+          document.getElementById("txtCPassword").focus();
+          alert("Confirm Password can not be empty..");
+          return false;
+        }       
+
+        if(Password != CPassword)
+        {
+          document.getElementById("txtCPassword").focus();
+          alert("Confirm Password should be same as Password..");
+          return false;
+        }
+
+       // return false;
+      }
+    </script>
+  </head>
+  <body>
+    <form class="modal-content" action="/Login.html" onsubmit="return validate(this);">
+      <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr />
+
+        <label for="fname"><b>First Name</b></label>
+        <input
+          type="text"
+          placeholder="Enter First Name"
+          id="txtFname"
+          
+        />
+
+        <label for="mname"><b>Middle Name</b></label>
+        <input type="text" placeholder="Enter Middle Name" id="txtMname" />
+
+        <label for="lname"><b>Last Name</b></label>
+        <input
+          type="text"
+          placeholder="Enter Last Name"
+          id="txtLname"
+        />
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" id="txtEmail" />
+
+        <label for="phone"><b>Phone Number</b></label>
+        <input
+          type="text"
+          placeholder="Enter Phone Number"
+          id="txtPhone"
+          
+        />
+
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="txtPassword"
+          
+        />
+
+        <label for="psw-repeat"><b>Confirm Password</b></label>
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          id="txtCPassword"
+          
+        />
+
+        <button type="submit" class="signup">Register</button>
+      </div>
+    </form>
+  </body>
+</html>
