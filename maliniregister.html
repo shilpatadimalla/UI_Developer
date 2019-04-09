@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>MY UI PAGE</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="register.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+  </head>
+<body>
+
+    
+      <div class="background">
+        <h1 class="heading">Register</h1>
+        <p class="heading">Please fill in this form to create an account.</p>
+        <hr>
+        <form id="form1" action="/action_page.php" class="container">
+            
+            <label for="First Name"><b>First Name</b></label>
+            <input type="text" placeholder= "Enter First Name" name="First Name" required>
+
+            <label for="Middle Name"><b>Middle Name</b></label>
+            <input type="text" placeholder= "Enter Middle Name" name="Middle Name"required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+        
+            <label for="Mobile number"><b>Mobile No</b></label>
+            <input type="text" placeholder="Enter Mobile No" name="Mobile No"required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+        
+            <label for="confirm psw"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Confirm Password" name="psw" required>
+
+            
+        <hr>
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+    
+        <button type="submit" class="registerbtn" onclick="location.href='project.html'">Register</button>
+      </div>
+      
+      
+    </form>
+    
+    </body>
+    </html>
