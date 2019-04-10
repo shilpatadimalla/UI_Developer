@@ -1,0 +1,26 @@
+<html>
+<body>
+
+<form method="post" action="#">
+<label for="pw">Password:</label>
+<input type="password" id= "pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*[.,@]).{8,}" >
+<input type="submit" id="sbt" >
+</form>
+
+<script>
+var pass = document.getElementById('pw');
+ var submitBtn =document.getElementById('sbt');
+pass.addEventListener('keyup', function (event) {
+  var isValid = pass.validity.patternMismatch;
+  
+  if ( isValid ) {
+   submitBtn.disabled = true;
+   pass.style.color="red";
+  } else {
+    submitBtn.disabled = false;
+    pass.style.color="green";
+  }
+  
+});
+</script>
+</body>
