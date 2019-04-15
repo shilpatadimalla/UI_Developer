@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /*/* Create four equal columns that floats next to each other 
+  .column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    height: 900px; /* Should be removed. Only for demonstration 
+  }
+  /* Clear floats after the columns 
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .img1 {
+      background-image: url("./images.jpg");
+  }*/
+
+.container-fluid {
+    display: inline-block;
+    width: 100%;
+    height: 900px;
+    margin: auto;
+    overflow:hidden;
+}
+
+.row {
+    overflow:hidden;
+    width:1350px;
+    height:800px;
+}
+.col-md-2{
+    height:700px;
+}
+.col-md-3{
+  height:700px;
+}
+#img1{
+  background-image: url("images.jpg");
+  background-size:300px ;
+ 
+ opacity:0.5;
+  
+}
+#img2{
+  background:   linear-gradient(
+    rgba(129, 171, 235, 0.952), 
+    rgba(255, 0, 0, 0.45)
+  );
+  
+  background-image: url("images2.jpg");
+  background-size:500px;
+  opacity: 0.5;
+  
+}
+#img3{
+  background-image: url("images3.jpg");
+  background-size:500px;
+  opacity: 0.5;
+}
+#img4{
+  background-image: url("images4.jpg");
+  background-size:450px;
+  opacity: 0.5;
+  }
+#img5{
+  background-image: url("images1.jpg");
+  background-size:400px;
+  opacity: 0.5;
+}
